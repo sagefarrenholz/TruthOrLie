@@ -1,22 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Victorias Gift</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla&family=Sansita+Swashed&display=swap" rel="stylesheet">
+    <link rel="icon" 
+      type="image/png" 
+      href="resources/favicon.png">
+    <title>Victoria Is 20!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <div class="preface">
-        <h1>Happy 20th Birthday Victoria!</h1>
-        <h2>If you get a passing score (over 12), you get a special prize.</h2>
-    </div>
-    
-    <main class="questions">
-
+    <canvas id="confetti">
+    </canvas>
+    <main class="main-cont cont">
+      <div class="central-box fade-in">
+        <div class="preface">
+          <div class="title --appear-slow-up" >
+            <h1 id="title">Happy 20th <br>Birthday Victoria</h1>
+          </div>
+          <div class="description --appear-fast-up"> 
+            <p  id="description">
+              Here's a game of Truth or Lie,<br>20 assertions, for your curious eyes,<br>get 12 right and win a prize,<br>click the button, and break the guise!
+            </p>
+          </div>
+        </div>
+        <br>
+        <div class="guesses">
+          <div id="truth-button" class="button" onclick="nextQuestion(true)">
+            <h3 id="truth-text" class="question-num">Start</h3>
+          </div>
+          <div id="lie-button" class="button" onclick="nextQuestion(false)">
+            <h3 id="lie-text" class="question-num">Start</h3>
+          </div>
+        </div>
+        <div id="prize">
+          <img src="/resources/HoodieTrans.png"/>
+        </div>
+      </div>
     </main>
-    
+   
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="resources/confetti-js/dist/index.min.js"></script>
+    <script src="quiz.js"></script>
   </body>
 </html>

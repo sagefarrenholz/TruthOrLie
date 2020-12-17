@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "confetti-js": "0.0.18",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "sass": "^1.26.11"

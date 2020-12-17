@@ -1,6 +1,8 @@
+const { response } = require('express');
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const { endianness } = require('os');
 const path = require('path');
 
 let questionPath = path.join(__dirname, "questions.json")
@@ -11,7 +13,7 @@ app.use('/', express.static('public'));
 app.use(express.json());
 
 app.post('/api/submitquestion', function (req, res){
-    if(req.body['password'] === "Pizzaisgood99@@") {
+    if(req.body['password'] === "password1234") {
         delete req.body.password;
         questionBank.questions.push(req.body);
         console.log(questionBank);
@@ -22,9 +24,10 @@ app.post('/api/submitquestion', function (req, res){
 });
 
 
-/*app.get('/api/questions', function (req, res, next) {
-
-    next();
-});*/
+app.get('/api/questions', function (req, res) {
+    let randArr = questionBank['questions'].slice();
+    randArr.sort(() => 0.5 - Math.random());
+    res.status(200).json({'questions': randArr.slice(0, 20)});
+});
 
 app.listen("80");

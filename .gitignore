@@ -2,3 +2,4 @@ node_modules
 scss
 src
 public/questions.json
+public/resources
